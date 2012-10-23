@@ -9,6 +9,7 @@
     <meta name="description" content="Responsive Application Development with Drupal and Backbone.">
     <meta name="author" content="Elliott Foster">
     <meta name="author" content="Michal Minecki">
+    <meta name="author" content="Ian Carrico">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -72,6 +73,19 @@
           </ul>
         </section>
         <section>
+          <h2>What we'll go over.</h2>
+          <ul>
+            <li>Pubsub Stuff</li>
+            <li>Drupo Poetry</li>
+            <li>Live Video Commenting</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>PubSub Stuff.</h2>
+          </section>
+        </section>
+        <section>
           <section>
             <p class='presenter'>mm</p>
             <h2>Drupal Poetry</h2>
@@ -115,7 +129,7 @@
             <li class="fragment">Work with hipster technolgies.</li>
             <li class="fragment">See if Responsive works for Applications.</li>
           </ul>
-        </section>  
+        </section>
         <section>
           <section>
             <p class='presenter'>ef</p>
@@ -181,161 +195,6 @@
           </section>
         </section>
 
-        <section class="architecture">
-          <section>
-            <p class='presenter'>ef+mm</p>
-            <h2>Architecture</h2>
-            <img src="img/architecture.png" />
-          </section>
-        </section>
-        <section>
-          <h2>Poem life cycle</h2>
-          <section>
-            <p class='presenter'>ef</p>
-            <h3>Fresh Page</h3>
-            <ul>
-              <li class="fragment">Nginx serves the HTML.</li>
-              <li class="fragment">Backbone.js requests the cached taxonomy terms to populate the word libraries.</li>
-              <li class="fragment">User starts to put words in the work area.</li>
-              <li class="fragment">All changes are stored in the browser memory.</li>
-              <li class="fragment">User clicks share.</li>
-            </ul>
-          </section>
-          <section>
-            <p class='presenter'>mm</p>
-            <h3>Saving a Poem</h3>
-            <ul>
-              <li class="fragment">Poem is saved.</li>
-              <li class="fragment">If there is no Session: Session is lazy created by Node.js and stored in Browser Local storage.</li>
-              <li class="fragment">Poem is saved as a json object directly in MongoDB by Node.js.</li>
-              <li class="fragment">Permalink is created by Node.js from the MongoDB hash and sent to browser.</li>
-              <li class="fragment">Reference to Poem is asynchronously saved in Drupal using services. (Send some other data with it but we feel bad about that.)</li>
-              <li class="fragment">Drupal responds with NID.</li>
-              <li class="fragment">Node.js Updates the MongoDB document with the the NID.</li>
-            </ul>
-          </section>  
-          <section>
-            <p class='presenter'>ef</p>
-            <h3>Fun stuff.</h3>
-            <ul>
-              <li class="fragment">User is encouraged to login with Twitter OAuth and/or tweet it.</li>
-              <li class="fragment">If they don't login and don't clear cache they can come back and edit.</li>
-              <li class="fragment"><em>Now it gets interesting.</em></li>
-              <li class="fragment">Moving the words saves the new poem in MongoDB. <em>Autosave!</em></li>
-              <li class="fragment">Same anon user can edit poems without login.</li>
-              <li class="fragment">Users can "fork" poems. Use someone else's poem as a starting point.</li>
-            </ul> 
-          </section>  
-        </section> 
-        <section class="architecture">
-          <section>
-            <p class='presenter'>questions</p>
-            <h2>Architecture Questions?</h2>
-            <img src="img/architecture.png" />
-          </section>
-        </section>
-        <section>
-          <h2>Responsive Application Development</h2>
-          <h3>vs</h3>
-          <h2>Responsive Web Development</h2>
-        </section>
-
-        <section>
-          <p class='presenter'>mm</p>
-          <h2>Responsive Web</h2>
-          <section>
-            <ul>
-              <li>Send one piece of HTML for all devices.</li>
-              <li class="fragment">Smart client "fits" content to the screen.</li>
-              <li class="fragment">Media Queries a main tool.</li>
-              <li class="fragment">Very well established patterns for content heavy sites.</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Examples</h3>
-            <div class="container">
-              <div class="carousel">
-                <a href="http://icann.org"><img src="img/icann.png" /></a>
-                <a href="http://pressflow.org"><img src="img/pressflow.png" /></a>
-                <a href="http://bostonglobe.com/"><img src="img/boston-globe.png" /></a>
-              </div>
-            </div>
-          </section>
-          <section>
-            <h3>Media Query</h3>
-            <pre><code class="css">
-/* Tablets with a 600px width (in portrait mode) */
-@media only screen and (min-width: 600px) and (orientation:portrait) {
-  body {
-    font-size: 1.575em;
-  }
-            </code></pre> 
-          </section>
-        </section>
-
-        <section>
-          <p class='presenter'>ef</p>
-          <h2>Responsive Applications</h2>
-          <section>
-            <ul>
-              <li>It's new ground, lots more unsolved problems that keep changing.</li>
-              <li class="fragment">Design patterns are not as strongly established for cross device interaction.</li>
-              <li class="fragment">HTML5 is a moving target, lots of promise but can't depend on browser support (test early and often).</li>
-              <li class="fragment">Lack of solid libraries, get ready to write lots of code and solve lots of problems.</li>
-              <li class="fragment">Inconsistent performance on older devices (Samsung Y U NO WORK!?).</li>
-            </ul>
-          </section>
-          <section>
-          <p>Responsive application design requires different interfaces for different screen sizes.</p>
-            <ul>
-             <li class="fragment">Content is simpler to scale than interaction.</li>
-             <li class="fragment">Consider which interactions need to be exposed on mobile and add more on larger display sizes.</li>
-             <li class="fragment">Still would recommend staying away from server side device detection.</li>
-             <li class="fragment">Sometimes interaction needs to be degraded and that takes planning.</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <p class='presenter'>mm</p>
-          <h2>Design, code, and test mobile first.</h2>
-          <p  class="fragment"><strong>Best piece of advice from this whole talk!</strong></p>
-          <ul>
-            <li class="fragment">Much easier to build up than to "fit" later.</li>
-            <li class="fragment">It's true for everything from design to code to testing.</li>
-            <li class="fragment">If you are going down this road it's time to stop being scared.</li>
-          </ul>
-        </section>
-
-        <section>
-          <p class='presenter'>mm</p>
-          <section>
-            <h3>Responsive App Interface Layout is Complicated</h3>
-            <ul>
-              <li class="fragment">Where does the Nexus 7 fit?</li>
-              <li class="fragment">Difference between tablet orientation is challenging</li>
-              <li class="fragment">You forgot about the twitter browser didn't you.</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Responsive App Interface Layout is Complicated</h3>
-            <ul>
-              <li class="fragment">Modularity is king.</li>
-              <li class="fragment">Allow user to scale and scroll as much as you can.</li>
-              <li class="fragment">Expect the unexpected!</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Client Side Templating To the Rescue</h3>
-            <ul>
-              <li class="fragment">It simplified everything and made the app fast (mostly).</li>
-              <li class="fragment">Made different interfaces possible since the data was separated (but didn't make them easy or seamless).</li>
-              <li class="fragment">Drawback: somewhat slow on shitty tablets.</li>
-              <li class="fragment">If we did it again we'd send rendered HTML for the initial view and then use templating for updates.</li>
-            </ul>
-          </section>
-        </section>
-
         <section>
           <p class='presenter'>ef</p>
           <h3>CSS Display Dictates JavaScript Behavior</h3>
@@ -394,73 +253,52 @@
             </code></pre>
           </section>
         </section>
-
-        <section>
-          <h2>Drupal as Content Management not Content Server</h2>
-        </section>
-
-        <section>
-          <p class='presenter'>ef</p>
-          <h3>Why we didn't build </h3> 
-          <h3><em>all of it</em> on Drupal?</h3>
+        <section class="architecture">
           <section>
+            <p class='presenter'>ef+mm</p>
+            <h2>Architecture</h2>
+            <img src="img/architecture.png" />
+          </section>
+        </section>
+        <section>
+          <h2>Poem life cycle</h2>
+          <section>
+            <p class='presenter'>ef</p>
+            <h3>Fresh Page</h3>
             <ul>
-              <li>Drupal is too slow for highly interactive apps.</li>
-              <li>We wanted to auto save on poem changes.</li>
-              <li>We didn't want to deploy to a bunch of servers.</li>
-              <li>WSCCI is going to make this much better!</li>
+              <li class="fragment">Nginx serves the HTML.</li>
+              <li class="fragment">Backbone.js requests the cached taxonomy terms to populate the word libraries.</li>
+              <li class="fragment">User starts to put words in the work area.</li>
+              <li class="fragment">All changes are stored in the browser memory.</li>
+              <li class="fragment">User clicks share.</li>
             </ul>
           </section>
           <section>
-            <li>Slow to work with Arrays of Doom</li>
-            <img src="img/drupal-poem.png" />
-            vs
-            <img src="img/poem.png" />
-          </section>
-          <section>
+            <p class='presenter'>mm</p>
+            <h3>Saving a Poem</h3>
             <ul>
-              <li>We weren't supporting site builders.</li>
-              <ul>
-                <li>Don't need all the things that Drupal gives you for "free".</li>
-                <li>Twitter is a great way to get simple user auth.</li>
-              </ul>
+              <li class="fragment">Poem is saved.</li>
+              <li class="fragment">If there is no Session: Session is lazy created by Node.js and stored in Browser Local storage.</li>
+              <li class="fragment">Poem is saved as a json object directly in MongoDB by Node.js.</li>
+              <li class="fragment">Permalink is created by Node.js from the MongoDB hash and sent to browser.</li>
+              <li class="fragment">Reference to Poem is asynchronously saved in Drupal using services. (Send some other data with it but we feel bad about that.)</li>
+              <li class="fragment">Drupal responds with NID.</li>
+              <li class="fragment">Node.js Updates the MongoDB document with the the NID.</li>
             </ul>
-          </section>
-        </section>
-
-        <section>
-          <p class='presenter'>mm</p>
-          <h3>Why build with Drupal?</h3>
-          <ul>
-            <li>Who likes building admin interfaces!? Yeah us neither...</li>
-            <li>Once you have nodes it's easy to set up aggregate views.</li>
-            <li>Services is very easy to extend and work with.</li>
-            <li>Administer poem words with Taxonomy <- Win!</li>
-          </ul>
-        </section>
-
-        <section>
-          <p class='presenter'>ef</p>
-          <h3>Why build with Node.js?</h3>
+          </section>  
           <section>
+            <p class='presenter'>ef</p>
+            <h3>Fun stuff.</h3>
             <ul>
-              <li>Data models are JSON objects...</li>
-              <ul>
-                <li>They work on the client.</li>
-                <li>They work on the server.</li>
-                <li>They work in MongoDB.</li>
-              </ul>
-            </ul>
-          </section>
-          <section>
-            <ul>
-              <li>It's f%@#ing Fast!</li>
-              <li>Evented I/O is great for bursty and unpredictable applications.</li>
-              <li>All made possible with asynchronous libraries.</li>
-            </ul>
-          </section>
-        </section>
-
+              <li class="fragment">User is encouraged to login with Twitter OAuth and/or tweet it.</li>
+              <li class="fragment">If they don't login and don't clear cache they can come back and edit.</li>
+              <li class="fragment"><em>Now it gets interesting.</em></li>
+              <li class="fragment">Moving the words saves the new poem in MongoDB. <em>Autosave!</em></li>
+              <li class="fragment">Same anon user can edit poems without login.</li>
+              <li class="fragment">Users can "fork" poems. Use someone else's poem as a starting point.</li>
+            </ul> 
+          </section>  
+        </section> 
         <section>
           <h3>Autosave Workflow</h3>
           <section>
@@ -474,6 +312,21 @@
             <img src="img/autosave-ideal.png" />
           </section>
         </section>
+        
+        <section class="architecture">
+          <section>
+            <p class='presenter'>questions</p>
+            <h2>Drupo Questions?</h2>
+            <img src="img/architecture.png" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>EEERRRRR MMERRRRE GERD VERDERO KERMENTING</h2>
+            <img src="img/kermit.jpg" width="250px" height="350px">
+          </section>
+        </section>
+
 
         <section data-state="show-fork-me">
           <h1>Thanks!</h1>
