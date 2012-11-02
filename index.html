@@ -326,6 +326,49 @@
             <img src="img/kermit.jpg" width="250px" height="350px">
           </section>
         </section>
+        <section>
+          <h2>What we did</h2>
+          <section>
+            <h3>The Need</h3>
+            <ul>
+              <li>A live event with viewers across the globe</li>
+              <li>Needed live-feed of all participants thoughts to be shared</li>
+              <li>As we were using a live video, we could not have any page refreshing</li>
+            </ul>
+            <br><br>
+            <p class="fragment">Why not Drupal's AJAX?<br>It's slow, we needed this real-time.</p>
+          </section>
+          <section>
+            <h3>The Solution</h3>
+            <ol>
+              <li class="fragment">Had a second server that was running Node.js with socket.io.</li>
+              <li class="fragment">Each user had a Drupal form that would submit a discussion node with their thoughts, thus saving the new node in Drupal.</li>
+              <li class="fragment">The node.js server pinged the Drupal server every 10-15 seconds and grabbed a JSON object with all new discussions</li>
+              <li class="fragment">Node.js would then push out all the new discussions to all users with socket.io, and update any formatting</li>
+              <li class="fragment">The client would receive the new nodes in a JSON object, display it on their feed.</li>
+          </section>
+          <section>
+            <h3>The Effect</h3>
+            <ul>
+              <li class="fragment">Real-time data was easily shared for every user.</li>
+              <li class="fragment">Minimal Drupal interface, while still keeping all data within Drupal.</li>
+              <li class="fragment">Single page for all video, discussions, etc. to allow all users to fully interact.</li>
+              <li class="fragment">All pages work fully on a variety of devices.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>The Nerdy Stuff</h3>
+            
+          </section>
+          <section>
+            <h3>The Future</h3>
+            <ul>
+              <li class="fragment">Setup comment history, so that they video can be replayed with the video at another date.</li>
+              <li class="fragment">Include some sort of voting API work, so that we can have live voting an analytics with the discussions</li>
+              <li class="fragment">Move the handing of new comments and discussion to Node.js, within reason.</li>
+            </ul>
+          </section>
+        </section>
 
 
         <section data-state="show-fork-me">
