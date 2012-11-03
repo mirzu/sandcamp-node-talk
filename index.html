@@ -111,14 +111,14 @@
             <h3>Wait, Drupal supports polling feeds, right?</h3>
             <ul>
               <li class="fragment">Yes! And in fact it's pretty good at it.</li>
-              <li class="fragment">BUT, these feeds were time sensitive (needed to be updated on all N sites within 60 seconds).</li>
-              <li class="fragment">It was unrealistic to have a Drupal process continuously running to do the polling (without setting some servers on fire and making sysadmins cry).</li>
+              <li class="fragment">BUT, these feeds were time sensitive.</li>
+              <li class="fragment">It was unrealistic to have a Drupal process continuously running to do the polling.</li>
             </ul>
           </section>
           <section>
             <h3>Ok, so what'd you do?</h3>
             <ul>
-              <li>Monkey patched the feeds with node.js to support PubSub.</li>
+              <li>Augmented the RSS feeds with node.js to support PubSub.</li>
               <li>Node took care of the polling and implemented the PubSub protocol so the feeds module would "just work".</li>
               <li>Deployed the node code in the joyent cloud, separate from the Drupal installations.</li>
             </ul>
@@ -161,17 +161,6 @@
             <h2>Drupal Admin</h2>
             <img src="img/drupal-admin.png" />
           </section>
-        </section>
-        <section>
-          <p class='presenter'>ef</p>
-          <h2>What We'll go over</h2>
-          <ul>
-            <li>Technologies we used &amp; how they work together.</li>
-            <li class="fragment">Differences between responsive websites &amp; responsive applications.</li>
-            <li class="fragment">Some fun JS tricks.</li>
-            <li class="fragment">Some things we got wrong, and what we're doing differently next time.</li>
-            <li class="fragment">How we integrated Drupal.</li>
-          </ul>
         </section>
         <section>
           <h2>Why We Built it</h2>
