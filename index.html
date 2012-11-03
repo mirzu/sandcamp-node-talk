@@ -39,8 +39,9 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-          <h1>Drupal Poetry</h1>
-          <h3 class="inverted">Responsive Application Development with Drupal and Backbone</h3>
+          <h1>Integrating node.js</h1>
+          <h3 class="inverted">for real-time awesomesauce</h3>
+          <h4>i.e. 4k ♥'s node.js</h4>
           <script>
             // Delicously hacky. Look away.
             if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
@@ -81,8 +82,8 @@
           </ul>
         </section>
         <section>
-          <h2>PubSubHubbub Hub</h2>
-
+          <h2>PubSubHubbub</h2>
+          <h2>Hub</h2>
           <img src="http://i.imgur.com/g5GET.jpg" />
         </section>
         <section>
@@ -130,6 +131,10 @@
               <li>Drupal is able to transparently subscribe to the node hub with the feeds module (i.e. Drupal devs don't need to know or care how the node code is working as long as it's up).</li>
             </ul>
           </section>
+        </section>
+        <section>
+          <h1>Drupal Poetry</h1>
+          <h3 class="inverted">Responsive Application Development with Drupal and Backbone</h3>
         </section>
         <section>
           <section>
@@ -416,9 +421,20 @@
           </section>
         </section>
 
+        <section>
+          <h3>Fork us on GitHub!</h3>
 
-        <section data-state="show-fork-me">
+          <img src="http://media-cache-ec6.pinterest.com/upload/226305949995949276_FA9IWBem_b.jpg" />
+          <br />
+          <ul>
+            <li><a href="https://github.com/elliotttf/PubHub">PubHub</a></li>
+            <li><a href="https://github.com/fourkitchens/Magnetic-Poetry">Drupal Poetry</a></li>
+          </ul>
+        </section>
+
+        <section >
           <h1>Thanks!</h1>
+
         </section>
 
         <section>
@@ -488,11 +504,6 @@
 
         // Transition style
         transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
-      });
-
-      Reveal.addEventListener('show-fork-me', function() {
-        var forkMe = document.getElementById('fork-me');
-        forkMe.style.display = 'block';
       });
 
       hljs.initHighlightingOnLoad();
