@@ -49,15 +49,6 @@
         </section>
 
         <section>
-          <h2>Elliott Foster</h2>
-          <ul class="networks">
-            <li class="twitter"><a href="https://twitter.com/elliotttf">@elliotttf</a></li>
-            <li class="drupal"><a href="http://drupal.org/user/61601">drupal.org/user/61601</a></li>
-            <li class="github"><a href="https://github.com/elliotttf">github.com/elliotttf</a></li>
-          </ul>
-        </section>
-
-        <section>
           <h2>Michal Minecki</h2>
           <ul class="networks">
             <li class="twitter"><a href="https://twitter.com/mirzu">@mirzu</a></li>
@@ -67,19 +58,117 @@
         </section>
 
         <section>
-          <h2>Ian Carrico</h2>
-          <ul class="networks">
-            <li class="drupal"><a href="http://drupal.org/user/1300542">drupal.org/user/1300542</a></li>
-            <li class="github"><a href="https://github.com/chinggizkhan">github.com/ChinggizKhan</a></li>
+          <h2>What we'll go over.</h2>
+          <ul>
+            <li>Node.js Basics</li>
+            <li>Three Quick Case studies.<ul>
+              <li>Pubsub Stuff</li>
+              <li>Drupo Poetry</li>
+              <li>Live Video Commenting</li>
+            </ul></li>
+            <li>Other integration options</li>
           </ul>
         </section>
         <section>
-          <h2>What we'll go over.</h2>
-          <ul>
-            <li>Pubsub Stuff</li>
-            <li>Drupo Poetry</li>
-            <li>Live Video Commenting</li>
-          </ul>
+          <h2>What is Node.js?</h2>
+        </section>
+        <section>
+          <h4>What is Node.js?</h4>
+          <section>
+            <h2>From Nodejs.org</h2>
+
+            <blockquote>
+              Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+            </blockquote>
+          </section>
+
+          <section data-markdown>
+            <h1> WAT?</h1>
+          </section>
+          <section data-markdown>
+            <blockquote>
+              Node.js is a platform built on Chrome's JavaScript runtime [...]
+            </blockquote>
+            <p>&nbsp</p>
+            <ul>
+              <li class='fragment'>Chrome's JavaScript runtime is called V8, it's one of the reasons
+              Chrome is considered so fast.</li>
+             <li class='fragment'>node.js leverages V8's speed on the server!</li>
+          </section>
+          <section data-markdown>
+            <blockquote>
+              [...] easily building fast, scalable network applications.
+            </blockquote>
+            <p>&nbsp</p>
+            <ul>
+              <li class='fragment'> Node wants to act as a message passer (more on this later).</li>
+            </ul>
+          </section>
+          <section data-markdown>
+            <blockquote>
+              Node.js uses an event-driven, non-blocking I/O model [...]
+            </blockquote>
+            <p>&nbsp</p>
+
+            <ul>
+              <li class='fragment'>Only one thing gets executed at a time, but libraries allow I/O
+              or other intensive tasks to be executed asynchronously so the
+              script doesn't need to wait for them to finish.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>What Node like to work with?</h2>
+            <ul>
+              <li class='fragment'>Javascript without a browser.</li>
+              <li class='fragment'>Runs as a server.</li>
+              <li class='fragment'>Ships with basic libraries.</li>
+              <li class='fragment'>Has a built in package manager.</li>
+              <li class='fragment'></li>
+            </ul>
+          </section>
+          <section>
+            <h2>What makes it awesome to work with?</h2>
+            <ul>
+              <li class='fragment'>Packages, lots of them very easy to manage.</li>
+              <li class='fragment'>Same language as in browser.</li>
+              <li class='fragment'>Large number of PAAS hosting options.</li>
+              <li class='fragment'>Large and fast growing community</li>
+              <li class='fragment'>It's Javascript.</li>
+            </ul>
+          </section>
+          <section data-markdown>
+            <h2>What could I do without?</h2>
+            <ul>
+              <li class='fragment'>Async programing can be difficult to organize. (Callback Hell)</li>
+              <li class='fragment'>Fast moving project lots of updates</li>
+              <li class='fragment'>Error handling is really important, server crash means whole app stops responding.</li>
+              <li class='fragment'>It's Javascript.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>If it's so great why don't you marry it?</h2>
+          <section>
+            <h2>Drupal Kicks Ass</h2>
+            <ul>
+              <li class='fragment'>Fully backed features. - Node has libraries, drupal has solutions.</li>
+              <li class='fragment'>Fully baked systems - Users, content, taxonomies.</li>
+              <li class='fragment'>Fully bakced admin interface.</li>
+              <li class='fragment'>Allows a great deal of flexibility for site builders.</li>
+            </ul>
+          </section>
+          </section>
+          <section>
+            <h2>Why does Drupal well with node?</h2>
+            <ul>
+              <li>Feeds is pretty awesome at injesting data</li>
+              <li>Lots of options for authenticaiton</li>
+              <li>Easy to connect to using services module</li>
+              <li>Easy to create custom endpoints in services</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h1>Case Studies</h1>
         </section>
         <section>
           <h2>PubSubHubbub</h2>
@@ -102,9 +191,8 @@
             <h3>The need</h3>
 
             <ul>
-              <li>N Drupal sites.</li>
-              <li>Need to consume X data feeds that didn't natively support PubSub.</li>
-              <li>(where N approaches 100 and X approaches 300).</li>
+              <li>About 100+ Drupal sites.</li>
+              <li>Need to consume about 300+ data feeds that didn't natively support PubSub.</li>
             </ul>
           </section>
           <section>
@@ -220,73 +308,6 @@
               <li>Schemaless design.</li>
             </ul>
           </section>
-          <section>
-            <h2>Drupal</h2>
-            <ul>
-              <li><a href="http://drupal.org">drupal.org</a></li>
-              <li>Fully baked administration workflow</li>
-              <li>Easy to connect to using services module</li>
-              <li>Lots of stuff "out of the box"</li>
-              <li>Todd said we had to</li>
-            </ul>
-          </section>
-        </section>
-
-        <section>
-          <h3>CSS Display Dictates JavaScript Behavior</h3>
-          <section>
-            <ul>
-              <li class="fragment">Don't need to worry about differences in browser JavaScript APIs.</li>
-              <li class="fragment">It's fast!</li>
-            </ul>
-          </section>
-          <section>
-            <pre><code class="javascript">
-              (function($) {
-                // ...
-
-                var barVisible = $('#word-bar').is(':visible');
-                var listingsVisible = $('#listings').is(':visible');
-
-                // ...
-              }(jQuery));
-            </code></pre>
-          </section>
-        </section>
-
-        <section>
-          <h3>Duck Punch, Learn to Love It</h3>
-          <section>
-            <ul>
-              <li>Proxy touch events to mouse events: <a href="https://github.com/furf/jquery-ui-touch-punch">jQuery-ui touch punch</a></li>
-              <li>touch == click</li>
-              <li>resize == orientation change</li>
-            </ul>
-          </section>
-          <section>
-            <pre><code class="javascript">
-              (function($) {
-                // ...
-
-                var supportsOrientationChange = "onorientationchange" in window;
-                var orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
-
-                // Reset barVisible on orientation changes.
-                var dispatch = _.clone(Backbone.Events);
-                window.addEventListener(
-                  orientationEvent,
-                  function() {
-                    barVisible = $('#word-bar').is(':visible');
-                    listingsVisible = $('#listings').is(':visible');
-                    dispatch.trigger('orientationChange');
-                  },
-                  false
-                );
-
-                // ...
-              }(jQuery));
-            </code></pre>
-          </section>
         </section>
         <section class="architecture">
           <section>
@@ -365,7 +386,7 @@
               <li>As we were using a live video, we could not have any page refreshing</li>
             </ul>
             <br><br>
-            <p class="fragment">Why not Drupal's AJAX?<br>It's slow, we needed this real-time.</p>
+            <p class="fragment">Why not Drupal's AJAX?<br>It's slow, and resource intensive</p>
           </section>
           <section>
             <h3>The Solution</h3>
@@ -397,6 +418,15 @@
               <li class="fragment">Move the handing of new comments and discussion to Node.js, within reason.</li>
             </ul>
           </section>
+        </section>
+        <section>
+          <h2>Drupal Module</h2>
+          <ul>
+            <li>Looks like a winner.</li>
+            <li>Appears well written and useful.</li>
+            <li>Opinionated and attempts to be comprehnsive</li>
+            <li>Didn't use it because we wanted low code debt.</li>
+          </ul>
         </section>
 
         <section>
